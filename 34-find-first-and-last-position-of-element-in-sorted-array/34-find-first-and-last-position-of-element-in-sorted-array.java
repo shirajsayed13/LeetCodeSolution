@@ -1,17 +1,17 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
+        int leftR = 0;
+        int rightR = nums.length - 1;
         int fi = -1;
-        while(left <= right) {
-            int mid = (left + right) / 2;
+        while(leftR <= rightR) {
+            int mid = (leftR + rightR) / 2;
             if(target > nums[mid]) {
-                left = mid + 1;
+                leftR = mid + 1;
             } else if (target < nums[mid]) {
-                right = mid - 1;
+                rightR = mid - 1;
             } else {
                 fi = mid;
-                right = mid - 1;
+                rightR = mid - 1;
             }
         }
         int leftL = 0;
